@@ -5,14 +5,16 @@ class Cliente{
 
 class ContaCorrente {
     agencia;
-    saldo;
+
+    // atributo privado porem ainda não esta valido para produção (#saldo) o padrão é utilizar _saldo , porem não torna o atributo devidamente privado atualmente no js
+    #saldo = 0;
     
     // operações (parametros ou argumentos) e metodos dentro da classe
     
     // operação de SAQUE
     sacar(valor){
-        if (this.saldo >= valor) {
-            this.saldo -= valor;
+        if (this.#saldo >= valor) {
+            this.#saldo -= valor;
         }
         
     }
@@ -20,7 +22,7 @@ class ContaCorrente {
     // Operação de Deposito
     depositar(valor){
         if (valor > 0) {
-            this.saldo += valor;
+            this.#saldo += valor;
         }
     }
 
@@ -30,7 +32,7 @@ const cliente1 = new Cliente();
 cliente1.nome = "Ricardo";
 cliente1.cpf = 11122233309;
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.saldo = 10000;
+
 contaCorrenteRicardo.agencia = 1001;
 
 contaCorrenteRicardo.depositar(100)
