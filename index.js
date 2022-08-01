@@ -12,7 +12,7 @@ class ContaCorrente {
     
     // operações (parametros ou argumentos) e metodos dentro da classe
     
-    // operação de SAQUE
+    // operação de SAQUE - inicio da Branch SAQUE
     sacar(valor){
         if (this.#saldo >= valor) {
             this.#saldo -= valor;
