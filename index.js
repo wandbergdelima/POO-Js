@@ -21,9 +21,10 @@ class ContaCorrente {
 
   // Operação de Deposito - inicio da Branch DEPOSITO
   depositar(valor) {
-    if (valor > 0) {
-      this._saldo += valor;
+    if (valor <= 0) {
+      return;
     }
+    this._saldo += valor;
   }
 }
 
