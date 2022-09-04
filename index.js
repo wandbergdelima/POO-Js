@@ -16,6 +16,7 @@ class ContaCorrente {
     sacar(valor){
         if (this.#saldo >= valor) {
             this.#saldo -= valor;
+            return valor;
         }
         
     }
