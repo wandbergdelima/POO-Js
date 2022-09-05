@@ -8,13 +8,18 @@ export class ContaCorrente {
     // #saldo = 0;
     _saldo = 0;
 
-    // Usando GET para ler o atributo privado e permitir a exibição.
+    // asociação de cliente a conta corrente do mesmo (iniciar o atributo cliente)
+    _cliente;
+
+    /*
+    Iniciando os Getters e Setters
+
+    Usando GET para ler o atributo privado e permitir a exibição.
+    */
+    
     get saldo(){
       return this._saldo;
     }
-
-    // asociação de cliente a conta corrente do mesmo (iniciar o atributo cliente)
-    _cliente;
 
     // Usando SET para instancear um atributo privado e permitindo o acesso somente por uma instancia de classe especifica.
     set cliente(novoValor){
@@ -27,7 +32,11 @@ export class ContaCorrente {
       return this._cliente;
     }
 
-    // operação de SAQUE - inicio da Branch SAQUE
+    /*
+    Inicio dos Metodos
+      
+    operação de SAQUE - inicio da Branch SAQUE
+    */
     sacar(valor) {
       if (this._saldo >= valor) {
         this._saldo -= valor;
